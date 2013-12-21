@@ -8,8 +8,9 @@ namespace axy\magic\tests\nstst;
 class RO
 {
     use \axy\magic\ReadOnly;
+    use \axy\magic\Named;
 
-    protected $magicName = 'RO';
+    protected static $magicName = 'CRO';
 
     public $v;
 

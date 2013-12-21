@@ -15,7 +15,7 @@ class ReadOnlyTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers ::__set
      * @expectedException \axy\magic\errors\ContainerReadOnly
-     * @expectedExceptionMessage axy\magic\tests\nstst\RO is read-only
+     * @expectedExceptionMessage CRO is read-only
      */
     public function testSet()
     {
@@ -26,7 +26,7 @@ class ReadOnlyTest extends \PHPUnit_Framework_TestCase
     /**
      * @covers ::__unset
      * @expectedException \axy\magic\errors\ContainerReadOnly
-     * @expectedExceptionMessage axy\magic\tests\nstst\RO is read-only
+     * @expectedExceptionMessage CRO is read-only
      */
     public function testUnset()
     {

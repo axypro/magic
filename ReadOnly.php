@@ -23,7 +23,8 @@ trait ReadOnly
      */
     public function __set($key, $value)
     {
-        throw new ContainerReadOnly(\get_class($this));
+        $name = \method_exists($this, 'getMagicName') ? $this->getMagicName() : \get_class($this);
+        throw new ContainerReadOnly($name);
     }
 
     /**
@@ -34,6 +35,7 @@ trait ReadOnly
      */
     public function __unset($key)
     {
-        throw new ContainerReadOnly(\get_class($this));
+        $name = \method_exists($this, 'getMagicName') ? $this->getMagicName() : \get_class($this);
+        throw new ContainerReadOnly($name);
     }
 }
