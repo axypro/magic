@@ -10,7 +10,7 @@ class NamedChildOver extends NamedParent
     /**
      * @return string
      */
-    protected function getMagicName()
+    protected function magicGetName()
     {
         return 'ChildOver';
     }

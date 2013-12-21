@@ -10,7 +10,7 @@ class AAMagicConvert extends AAMagic
     /**
      * {@inheritdoc}
      */
-    protected function convertArrayKeyToMagic($key)
+    protected function magicConvertIndexToKey($key)
     {
         return \str_replace('-', '_', $key);
     }

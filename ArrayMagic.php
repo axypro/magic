@@ -18,7 +18,7 @@ trait ArrayMagic
      * @param string $key
      * @return string
      */
-    protected function convertArrayKeyToMagic($key)
+    protected function magicConvertIndexToKey($key)
     {
         return $key;
     }
@@ -28,7 +28,7 @@ trait ArrayMagic
      */
     public function offsetExists($offset)
     {
-        return $this->__isset($this->convertArrayKeyToMagic($offset));
+        return $this->__isset($this->magicConvertIndexToKey($offset));
     }
 
     /**
@@ -36,7 +36,7 @@ trait ArrayMagic
      */
     public function offsetGet($offset)
     {
-        return $this->__get($this->convertArrayKeyToMagic($offset));
+        return $this->__get($this->magicConvertIndexToKey($offset));
     }
 
     /**
@@ -44,7 +44,7 @@ trait ArrayMagic
      */
     public function offsetSet($offset, $value)
     {
-        return $this->__set($this->convertArrayKeyToMagic($offset), $value);
+        return $this->__set($this->magicConvertIndexToKey($offset), $value);
     }
 
     /**
@@ -52,6 +52,6 @@ trait ArrayMagic
      */
     public function offsetUnset($offset)
     {
-        return $this->__unset($this->convertArrayKeyToMagic($offset));
+        return $this->__unset($this->magicConvertIndexToKey($offset));
     }
 }

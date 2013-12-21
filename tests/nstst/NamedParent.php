@@ -11,6 +11,6 @@ class NamedParent
 
     public function getName()
     {
-        return $this->getMagicName();
+        return $this->magicGetName();
     }
 }

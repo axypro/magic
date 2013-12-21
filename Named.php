@@ -20,7 +20,7 @@ trait Named
      *
      * @return string
      */
-    protected function getMagicName()
+    protected function magicGetName()
     {
         if (!empty(static::$magicName)) {
             return static::$magicName;
@@ -35,6 +35,6 @@ trait Named
      */
     public function __toString()
     {
-        return $this->getMagicName();
+        return $this->magicGetName();
     }
 }
