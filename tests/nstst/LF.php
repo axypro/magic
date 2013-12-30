@@ -12,7 +12,7 @@ class LF implements \ArrayAccess
     use \axy\magic\ArrayMagic;
     use \axy\magic\Named;
 
-    protected static $magicName = 'TestLF';
+    protected $magicName = 'TestLF';
 
     public $requests = [];
     public $issetRequests = [];

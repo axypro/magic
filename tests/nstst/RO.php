@@ -10,7 +10,7 @@ class RO
     use \axy\magic\ReadOnly;
     use \axy\magic\Named;
 
-    protected static $magicName = 'CRO';
+    protected $magicName = 'CRO';
 
     public $v;
 

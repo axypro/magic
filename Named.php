@@ -22,8 +22,8 @@ trait Named
      */
     protected function magicGetName()
     {
-        if (!empty(static::$magicName)) {
-            return static::$magicName;
+        if ((\property_exists($this, 'magicName')) && (!empty($this->magicName))) {
+            return $this->magicName;
         }
         return \get_class($this);
     }

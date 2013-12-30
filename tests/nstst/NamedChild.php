@@ -7,5 +7,5 @@ namespace axy\magic\tests\nstst;
 
 class NamedChild extends NamedParent
 {
-    protected static $magicName = 'Child';
+    protected $magicName = 'Child';
 }
