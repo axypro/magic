@@ -1,6 +1,6 @@
-## Master
+## 0.1.0 (02.01.2013)
 
-* LazyField: magicGet() & magicIsset()
+* LazyField: deep refactoring
 
 ## 0.0.2 (30.12.2013)
 

@@ -5,70 +5,134 @@
 
 namespace axy\magic\tests;
 
-use axy\magic\tests\nstst\LFOver;
-use axy\magic\tests\nstst\LFRnd;
+use axy\magic\tests\nstst\lazy\LF;
+use axy\magic\tests\nstst\lazy\LFChild;
 
 /**
  * @coversDefaultClass axy\magic\LazyField
  */
 class LazyFieldTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @covers ::magicCreateField
-     * @covers ::magicExistsField
-     */
-    public function testLazy()
+    public function testExternal()
     {
-        $lazy = new LFOver();
-        $this->assertTrue(isset($lazy->over_field));
-        $this->assertTrue(isset($lazy->prop_10));
-        $this->assertTrue(isset($lazy->prop_10));
-        $this->assertTrue(isset($lazy->prop_110));
-        $this->assertFalse(isset($lazy->prop_10x));
-        $this->assertFalse(isset($lazy->unknown));
-        $this->assertSame('over_value', $lazy->over_field);
-        $this->assertSame(20, $lazy->prop_10);
-        $this->assertSame(220, $lazy->prop_110);
-        $this->assertSame(20, $lazy->prop_10);
-        $this->assertSame(null, $lazy->prop_0);
-        $this->assertSame(null, $lazy->prop_0);
-        $this->assertTrue(isset($lazy->prop_10));
-        $this->assertTrue(isset($lazy->prop_200));
-        $this->assertEquals(['prop_10', 'prop_110', 'prop_0'], $lazy->requests);
-        $this->assertEquals(['prop_10', 'prop_110', 'prop_200'], $lazy->issetRequests);
-        $msg = 'Field "unknown" is not exist in "TestLF"';
-        $this->setExpectedException('\axy\magic\errors\FieldNotExist', $msg);
-        return $lazy->unknown;
+        $lazy = new LF();
+        $this->assertTrue(isset($lazy->click));
+        $this->assertSame(1, $lazy->click);
+        $this->assertSame(2, $lazy->click);
     }
 
-    public function testOtherTraits()
+    public function testStatic()
     {
-        $lazy = new LFOver();
-        $this->assertTrue(isset($lazy['over_field']));
-        $this->assertTrue(isset($lazy['prop_10']));
-        $this->assertFalse(isset($lazy['prop_10x']));
-        $this->assertSame(20, $lazy['prop_10']);
-        $msg = 'TestLF is read-only';
-        $this->setExpectedException('\axy\magic\errors\ContainerReadOnly', $msg);
-        $lazy['prop_10'] = 10;
+        $lazy = new LF();
+        $this->assertTrue(isset($lazy->static_f));
+        $this->assertSame('value of static', $lazy->static_f);
+        $this->assertSame('value of static', $lazy->static_f);
     }
 
-    /**
-     * @covers ::magicGet
-     * @covers ::magicIsset
-     */
-    public function testMagicGetIsset()
+    public function testLoaders()
     {
-        $lazy = new LFRnd();
-        $this->assertTrue(isset($lazy->rnd));
+        LF::$calls = [];
+        $lazy = new LF();
         $this->assertTrue(isset($lazy->one));
         $this->assertTrue(isset($lazy->two));
-        $this->assertFalse(isset($lazy->three));
-        $this->assertSame(1, $lazy->rnd);
-        $this->assertSame(2, $lazy->rnd);
-        $this->assertSame(1, $lazy->one);
-        $this->assertSame(2, $lazy->two);
-        $this->setExpectedException('\axy\magic\errors\FieldNotExist');
-        return $lazy->three;
+        $this->assertTrue(isset($lazy->one));
+        $this->assertTrue(isset($lazy->two));
+        $this->assertEquals([1, 2, 'one'], $lazy->one);
+        $this->assertSame('ktwo', $lazy->two);
+        $this->assertEquals([1, 2, 'one'], $lazy->one);
+        $this->assertSame('ktwo', $lazy->two);
+        $this->assertEquals(['getSelfArgs:one', 'createTwo:two'], LF::$calls);
+    }
+
+    public function testCreate()
+    {
+        LF::$calls = [];
+        $lazy = new LF();
+        $this->assertTrue(isset($lazy->first));
+        $this->assertTrue(isset($lazy->second));
+        $this->assertTrue(isset($lazy->first));
+        $this->assertTrue(isset($lazy->second));
+        $this->assertSame('Content of first.txt', $lazy->first);
+        $this->assertSame('Content of second.txt', $lazy->second);
+        $this->assertSame('Content of first.txt', $lazy->first);
+        $this->assertSame('Content of second.txt', $lazy->second);
+        $this->assertEquals(['isset:second', 'load:first', 'load:second'], LF::$calls);
+    }
+
+    public function testUnknown()
+    {
+        LF::$calls = [];
+        $lazy = new LF();
+        $this->assertFalse(isset($lazy->unk));
+        $this->assertFalse(isset($lazy->unkn));
+        $this->assertFalse(isset($lazy->unk));
+        $this->assertFalse(isset($lazy->unkn));
+        $this->assertEquals(['isset:unk'], LF::$calls);
+        $msg = 'Field "unk" is not exist in "TestLF"';
+        $this->setExpectedException('axy\magic\errors\FieldNotExist', $msg);
+        return $lazy->unk;
+    }
+
+    public function testEdit()
+    {
+        $lazy = new LF();
+        $lazy->setStatic('new value');
+        $this->assertSame('new value', $lazy->static_f);
+    }
+
+    public function testOverGet()
+    {
+        $lazy = new LFChild();
+        $this->assertTrue(isset($lazy->child));
+        $this->assertTrue(isset($lazy->click));
+        $this->assertSame('value child', $lazy->child);
+        $this->assertSame(1, $lazy->click);
+    }
+
+    public function testOverStatic()
+    {
+        $lazy = new LFChild();
+        $this->assertTrue(isset($lazy->static_f));
+        $this->assertTrue(isset($lazy->new_static));
+        $this->assertSame('value of static', $lazy->static_f);
+        $this->assertSame('nsv', $lazy->new_static);
+    }
+
+    public function testOverLoaders()
+    {
+        $lazy = new LFChild();
+        $this->assertTrue(isset($lazy->one));
+        $this->assertFalse(isset($lazy->two));
+        $this->assertTrue(isset($lazy->three));
+        $this->assertEquals([1, 2, 'one'], $lazy->one);
+        $this->assertSame(null, $lazy->two);
+        $this->assertSame('v three', $lazy->three);
+    }
+
+    public function testOverCreate()
+    {
+        $lazy = new LFChild();
+        $this->assertTrue(isset($lazy->first));
+        $this->assertTrue(isset($lazy->qwe));
+        $this->assertFalse(isset($lazy->unk));
+        $this->assertSame('Content of first.txt', $lazy->first);
+        $this->assertSame('rty', $lazy->qwe);
+        $this->assertSame(null, $lazy->unk);
+    }
+
+    /**
+     * @expectedException axy\magic\errors\ContainerReadOnly
+     */
+    public function testReadOnly()
+    {
+        $lazy = new LFChild();
+        $lazy->one = 1;
+    }
+
+    public function testArrayAccess()
+    {
+        $lazy = new LFChild();
+        $this->assertTrue(isset($lazy['first']));
+        $this->assertSame('Content of first.txt', $lazy['first']);
     }
 }
