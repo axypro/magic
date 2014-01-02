@@ -6,7 +6,7 @@
 
 ### Install
 
-`composer require axy/magic:~0.1.0`
+`composer require axy/magic:~0.1.1`
 
 ### Dependencies
 
