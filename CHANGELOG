@@ -1,3 +1,7 @@
+## Master
+
+* LazyField: magicGet() & magicIsset()
+
 ## 0.0.2 (30.12.2013)
 
 * Names: $magicName is not static

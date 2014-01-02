@@ -23,10 +23,7 @@ trait LazyField
      */
     public function __get($key)
     {
-        if (!\array_key_exists($key, $this->magicFieldsStorage)) {
-            $this->magicFieldsStorage[$key] = $this->magicCreateField($key);
-        }
-        return $this->magicFieldsStorage[$key];
+        return $this->magicGet($key);
     }
 
     /**
@@ -36,6 +33,28 @@ trait LazyField
      * @return boolean
      */
     public function __isset($key)
+    {
+        return $this->magicIsset($key);
+    }
+
+    /**
+     * @param string $key
+     * @return mixed
+     * @throws \axy\magic\errors\FieldNotExists
+     */
+    protected function magicGet($key)
+    {
+        if (!\array_key_exists($key, $this->magicFieldsStorage)) {
+            $this->magicFieldsStorage[$key] = $this->magicCreateField($key);
+        }
+        return $this->magicFieldsStorage[$key];
+    }
+
+    /**
+     * @param string $key
+     * @return boolean
+     */
+    protected function magicIsset($key)
     {
         if (!isset($this->magicFieldsExists[$key])) {
             $this->magicFieldsExists[$key] = $this->magicExistsField($key);

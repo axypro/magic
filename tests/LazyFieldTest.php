@@ -6,6 +6,7 @@
 namespace axy\magic\tests;
 
 use axy\magic\tests\nstst\LFOver;
+use axy\magic\tests\nstst\LFRnd;
 
 /**
  * @coversDefaultClass axy\magic\LazyField
@@ -50,5 +51,24 @@ class LazyFieldTest extends \PHPUnit_Framework_TestCase
         $msg = 'TestLF is read-only';
         $this->setExpectedException('\axy\magic\errors\ContainerReadOnly', $msg);
         $lazy['prop_10'] = 10;
+    }
+
+    /**
+     * @covers ::magicGet
+     * @covers ::magicIsset
+     */
+    public function testMagicGetIsset()
+    {
+        $lazy = new LFRnd();
+        $this->assertTrue(isset($lazy->rnd));
+        $this->assertTrue(isset($lazy->one));
+        $this->assertTrue(isset($lazy->two));
+        $this->assertFalse(isset($lazy->three));
+        $this->assertSame(1, $lazy->rnd);
+        $this->assertSame(2, $lazy->rnd);
+        $this->assertSame(1, $lazy->one);
+        $this->assertSame(2, $lazy->two);
+        $this->setExpectedException('\axy\magic\errors\FieldNotExist');
+        return $lazy->three;
     }
 }
