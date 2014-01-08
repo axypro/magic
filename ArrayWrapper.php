@@ -24,10 +24,26 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
      *        the readonly flag (by default - as defined in this class)
      * @param boolean $errprop [optional]
      *        the error NotFound flag (by default - as defined in this class)
+     * @throws \axy\magic\errors\FieldNotExist
      */
     public function __construct(array $source = null, $readonly = null, $errprop = null)
     {
-        $this->source = \array_replace($this->source ?: [], $source ?: []);
+        if ($source) {
+            if ($this->source) {
+                if ($this->rigidly) {
+                    $diff = \array_diff_key($source, $this->source);
+                    if (!empty($diff)) {
+                        \reset($diff);
+                        throw new FieldNotExist(\key($diff));
+                    }
+                }
+                $this->source = \array_replace($this->source, $source);
+            } else {
+                $this->source = $source;
+            }
+        } elseif ($this->source === null) {
+            $this->source = [];
+        }
         if (\is_bool($readonly)) {
             $this->readonly = $readonly;
         }
@@ -84,6 +100,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * {@inheritdoc}
      * @throws \axy\magic\errors\ContainerReadOnly
+     * @throws \axy\magic\errors\FieldNotExist
      */
     public function __set($key, $value)
     {
@@ -93,6 +110,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * {@inheritdoc}
      * @throws \axy\magic\errors\ContainerReadOnly
+     * @throws \axy\magic\errors\FieldNotExist
      */
     public function __unset($key)
     {
@@ -119,6 +137,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * {@inheritdoc}
      * @throws \axy\magic\errors\ContainerReadOnly
+     * @throws \axy\magic\errors\FieldNotExist
      */
     public function offsetSet($offset, $value)
     {
@@ -128,6 +147,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * {@inheritdoc}
      * @throws \axy\magic\errors\ContainerReadOnly
+     * @throws \axy\magic\errors\FieldNotExist
      */
     public function offsetUnset($offset)
     {
@@ -207,11 +227,15 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
      * @param string $key
      * @param mixed $value
      * @throws \axy\magic\errors\ContainerReadOnly
+     * @throws \axy\magic\errors\FieldNotExist
      */
     protected function set($key, $value)
     {
         if ($this->readonly) {
             throw new ContainerReadOnly($this);
+        }
+        if ($this->rigidly && (!\array_key_exists($key, $this->source))) {
+            throw new FieldNotExist($key, $this);
         }
         $this->source[$key] = $value;
     }
@@ -221,6 +245,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
      *
      * @param string $key
      * @throws \axy\magic\errors\ContainerReadOnly
+     * @throws \axy\magic\errors\FieldNotExist
      */
     protected function remove($key)
     {
@@ -231,6 +256,9 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
             if (!\array_key_exists($key, $this->source)) {
                 throw new FieldNotExist($key, $this);
             }
+        }
+        if ($this->rigidly) {
+            throw new FieldNotExist($key, $this);
         }
         unset($this->source[$key]);
     }
@@ -255,4 +283,11 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
      * @var boolean
      */
     protected $errprop = false;
+
+    /**
+     * Rigid structure
+     *
+     * @var boolean
+     */
+    protected $rigidly = false;
 }

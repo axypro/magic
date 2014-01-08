@@ -7,6 +7,7 @@ namespace axy\magic\tests;
 
 use axy\magic\ArrayWrapper;
 use axy\magic\tests\nstst\Wrap;
+use axy\magic\tests\nstst\WrapRigidly;
 
 /**
  * @coversDefaultClass axy\magic\ArrayWrapper
@@ -157,5 +158,22 @@ class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(10, $wrapper->a);
         $this->setExpectedException('axy\magic\errors\FieldNotExist');
         return $wrapper->unk;
+    }
+
+    public function testRigidlySet()
+    {
+        $wrapper = new WrapRigidly(['one' => 'One']);
+        $wrapper->one = 1;
+        $wrapper->two = 2;
+        $this->setExpectedException('axy\magic\errors\FieldNotExist');
+        $wrapper->three = 3;
+    }
+
+    /**
+     * @expectedException axy\magic\errors\FieldNotExist
+     */
+    public function testRigidlyConstruct()
+    {
+        return new WrapRigidly(['one' => 'One', 'three' => 3]);
     }
 }
