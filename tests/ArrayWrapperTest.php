@@ -171,6 +171,7 @@ class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException axy\magic\errors\FieldNotExist
+     * @expectedExceptionMessage Field "three" is not exist in "Wrap"
      */
     public function testRigidlyConstruct()
     {

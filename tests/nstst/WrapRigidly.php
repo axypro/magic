@@ -19,4 +19,9 @@ class WrapRigidly extends \axy\magic\ArrayWrapper
         'one' => 'first',
         'two' => 'second',
     ];
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $magicName = 'Wrap';
 }

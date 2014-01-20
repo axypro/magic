@@ -15,6 +15,8 @@ use axy\magic\errors\FieldNotExist;
  */
 class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
 {
+    use Named;
+
     /**
      * Constructor
      *
@@ -34,7 +36,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
                     $diff = \array_diff_key($source, $this->source);
                     if (!empty($diff)) {
                         \reset($diff);
-                        throw new FieldNotExist(\key($diff));
+                        throw new FieldNotExist(\key($diff), $this);
                     }
                 }
                 $this->source = \array_replace($this->source, $source);
