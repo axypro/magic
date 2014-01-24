@@ -4,7 +4,8 @@
     "description": "Work with magic fields",
     "keywords": [
         "Magic",
-        "ArrayAccess"
+        "ArrayAccess",
+        "Read-Only"
     ],
     "homepage": "https://github.com/axypro/magic",
     "license": "MIT",
@@ -16,14 +17,13 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "axy/errors": "~0.0.1",
-        "axy/callbacks": "~0.0.1"
+        "axy/errors": "~0.0.4",
+        "axy/callbacks": "~0.0.2"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "axy\\magic\\": ""
         }
     },
-    "target-dir": "axy/magic"
+    "target-dir": ""
 }
-
