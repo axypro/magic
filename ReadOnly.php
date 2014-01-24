@@ -8,7 +8,7 @@ namespace axy\magic;
 use axy\magic\errors\ContainerReadOnly;
 
 /**
- * Read-only container
+ * The read-only container
  *
  * @author Oleg Grigoriev <go.vasac@gmail.com>
  */

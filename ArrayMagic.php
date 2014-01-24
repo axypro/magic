@@ -6,21 +6,21 @@
 namespace axy\magic;
 
 /**
- * ArrayAccess-requests are forwarded to magic methods
+ * ArrayAccess-requests are forwarded to the magic methods
  *
  * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 trait ArrayMagic
 {
     /**
-     * Covert an array index to a magic key
+     * Convert an array index to a magic key
      *
-     * @param string $key
+     * @param string $index
      * @return string
      */
-    protected function magicConvertIndexToKey($key)
+    protected function magicConvertIndexToKey($index)
     {
-        return $key;
+        return $index;
     }
 
     /**

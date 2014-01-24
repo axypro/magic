@@ -6,7 +6,7 @@
 namespace axy\magic\errors;
 
 /**
- * Basic error of axy\magic
+ * The basic error of axy\magic
  *
  * @author Oleg Grigoriev <go.vasac@gmail.com>
  */

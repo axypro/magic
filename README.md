@@ -13,3 +13,4 @@
 Uses PHP 5.4+
 
 Requires [axy\errors](https://github.com/axypro/errors).
+Requires [axy\callbacks](https://github.com/axypro/callbacks).

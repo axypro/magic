@@ -33,7 +33,7 @@ trait LazyField
     }
 
     /**
-     * Get a magic property
+     * Returns a magic property
      *
      * @param string $key
      * @return mixed
@@ -62,7 +62,7 @@ trait LazyField
     }
 
     /**
-     * Check if exists a magic property
+     * Checks if a magic property is exists
      *
      * @param string $key
      * @return boolean
@@ -86,7 +86,7 @@ trait LazyField
     }
 
     /**
-     * Create a lazy field
+     * Creates a lazy field
      *
      * @param string $key
      * @return mixed
@@ -98,7 +98,7 @@ trait LazyField
     }
 
     /**
-     * Check is exists a lazy field
+     * Checks is a lazy field is exists
      *
      * @param string $key
      * @return boolean
@@ -109,7 +109,7 @@ trait LazyField
     }
 
     /**
-     * Signal an error
+     * Signals an error
      *
      * @param string $key
      * @return mixed
@@ -121,7 +121,7 @@ trait LazyField
     }
 
     /**
-     * Get defaults parameters
+     * Returns the defaults parameters
      *
      * @return array
      */
@@ -136,7 +136,7 @@ trait LazyField
     }
 
     /**
-     * Init magic fields
+     * Initializations of magic fields
      */
     protected function magicInit()
     {
@@ -161,6 +161,8 @@ trait LazyField
     // protected $magicDefaults
 
     /**
+     * The flag that magic fields is initialized
+     *
      * @var boolean
      */
     protected $magicInited = false;

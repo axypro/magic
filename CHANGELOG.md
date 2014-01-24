@@ -1,7 +1,10 @@
 ### dev-master
 
+### 0.1.4 (24.01.2014)
+
 * Composer: PSR-4
 * ArrayWrapper: fix name in exception
+* Some refs and docs
 
 ### 0.1.3 (08.01.2013)
 

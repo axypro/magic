@@ -5,8 +5,10 @@
  * @package axy\magic
  * @author Oleg Grigoriev <go.vasac@gmail.com>
  * @license https://raw.github.com/axypro/magic/master/LICENSE MIT
+ * @link https://github.com/axypro/magic repository
+ * @link https://github.com/axypro/magic/wiki documentation
+ * @link https://packagist.org/packages/axy/magic on packagist.org
  * @uses PHP5.4+
- * @uses axy\errors
  */
 
 namespace axy\magic;

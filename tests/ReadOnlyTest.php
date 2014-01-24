@@ -44,9 +44,6 @@ class ReadOnlyTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(10, $instance->v);
     }
 
-    /**
-     * @covers ::__get
-     */
     public function testMagicGet()
     {
         $instance = new RO();

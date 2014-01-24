@@ -27,6 +27,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
      * @param boolean $errprop [optional]
      *        the error NotFound flag (by default - as defined in this class)
      * @throws \axy\magic\errors\FieldNotExist
+     *         the source contains an unknown field (for a rigid structure)
      */
     public function __construct(array $source = null, $readonly = null, $errprop = null)
     {
@@ -73,7 +74,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     }
 
     /**
-     * Check if the object in read-only mode
+     * Checks if the object in read-only mode
      *
      * @return boolean
      */
@@ -173,7 +174,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     }
 
     /**
-     * Convert an index of the object (ArrayAccess) to an index of the source array
+     * Converts an index of the object (ArrayAccess) to an index of the source array
      *
      * @param string $index
      * @return string
@@ -184,7 +185,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     }
 
     /**
-     * Convert a key of an object property to an index of the source array
+     * Converts a key of an object property to an index of the source array
      *
      * @param string $key
      * @return string
@@ -195,7 +196,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     }
 
     /**
-     * Get the item from the source
+     * Returns an item from the source
      *
      * @param string $key
      * @return mixed
@@ -213,7 +214,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     }
 
     /**
-     * Check if exists the item
+     * Check if an item is exists
      *
      * @param string $key
      * @return boolean
@@ -224,7 +225,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     }
 
     /**
-     * Set the item value
+     * Set an item value
      *
      * @param string $key
      * @param mixed $value
@@ -243,7 +244,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     }
 
     /**
-     * Remove the item from the source array
+     * Removes an item from the source array
      *
      * @param string $key
      * @throws \axy\magic\errors\ContainerReadOnly

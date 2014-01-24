@@ -33,7 +33,7 @@ class ArrayMagicTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::covertArrayKeyToMagic
+     * @covers ::magicConvertIndexToKey
      */
     public function testConvertKey()
     {

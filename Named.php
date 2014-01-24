@@ -16,7 +16,7 @@ namespace axy\magic;
 trait Named
 {
     /**
-     * Get the name of the container
+     * Returns the name of the container
      *
      * @return string
      */
@@ -30,8 +30,6 @@ trait Named
 
     /**
      * {@inheritdoc}
-     *
-     * @return string
      */
     public function __toString()
     {
