@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "a3832ae9795b7d1c9a560151ea3259db",
+    "hash": "aa4a80a8ea6e51bcfdf246c67538b935",
     "packages": [
         {
             "name": "axy/backtrace",
