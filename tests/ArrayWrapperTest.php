@@ -97,7 +97,7 @@ class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
             'x' => 'this is X',
             'y' => 'this is Y',
         ];
-        $this->assertEquals($expected, \iterator_to_array($wrapper));
+        $this->assertEquals($expected, iterator_to_array($wrapper));
     }
 
     /**
@@ -131,7 +131,7 @@ class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
             'two item' => 'new value',
             'qq qq' => 10,
         ];
-        $this->assertEquals($expected, \iterator_to_array($wrapper));
+        $this->assertEquals($expected, iterator_to_array($wrapper));
     }
 
     /**

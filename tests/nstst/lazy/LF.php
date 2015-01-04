@@ -5,10 +5,10 @@
 
 namespace axy\magic\tests\nstst\lazy;
 
-use \axy\magic\LazyField;
-use \axy\magic\ArrayMagic;
-use \axy\magic\Named;
-use \axy\magic\ReadOnly;
+use axy\magic\LazyField;
+use axy\magic\ArrayMagic;
+use axy\magic\Named;
+use axy\magic\ReadOnly;
 
 class LF implements \ArrayAccess
 {
@@ -59,7 +59,7 @@ class LF implements \ArrayAccess
     public static function getSelfArgs($a, $b, $key)
     {
         self::$calls[] = 'getSelfArgs:'.$key;
-        return \func_get_args();
+        return func_get_args();
     }
 
     private function createTwo($key)
@@ -74,7 +74,6 @@ class LF implements \ArrayAccess
         $this->magicFields['fields']['static_f'] = $value;
         $this->magicFields['exists']['static_f'] = true;
     }
-
 
     protected function magicCreateField($key)
     {

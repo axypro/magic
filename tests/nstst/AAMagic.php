@@ -5,7 +5,7 @@
 
 namespace axy\magic\tests\nstst;
 
-use \axy\magic\ArrayMagic;
+use axy\magic\ArrayMagic;
 
 class AAMagic implements \ArrayAccess
 {

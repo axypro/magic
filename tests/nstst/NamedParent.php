@@ -5,7 +5,7 @@
 
 namespace axy\magic\tests\nstst;
 
-use \axy\magic\Named;
+use axy\magic\Named;
 
 class NamedParent
 {

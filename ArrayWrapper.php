@@ -161,7 +161,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function count()
     {
-        return \count($this->source);
+        return count($this->source);
     }
 
     /**

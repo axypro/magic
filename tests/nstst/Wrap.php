@@ -5,7 +5,7 @@
 
 namespace axy\magic\tests\nstst;
 
-use \axy\magic\ArrayWrapper;
+use axy\magic\ArrayWrapper;
 
 class Wrap extends ArrayWrapper
 {

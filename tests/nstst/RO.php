@@ -5,8 +5,8 @@
 
 namespace axy\magic\tests\nstst;
 
-use \axy\magic\ReadOnly;
-use \axy\magic\Named;
+use axy\magic\ReadOnly;
+use axy\magic\Named;
 
 class RO
 {

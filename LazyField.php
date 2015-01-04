@@ -48,7 +48,7 @@ trait LazyField
             if (isset($this->magicFields['loaders'][$key])) {
                 $loader = $this->magicFields['loaders'][$key];
                 if ((is_string($loader)) && (substr($loader, 0, 2) == '::')) {
-                    $loader = \substr($loader, 2);
+                    $loader = substr($loader, 2);
                     $fields[$key] = $this->$loader($key);
                 } else {
                     $fields[$key] = Callback::call($loader, [$key]);
