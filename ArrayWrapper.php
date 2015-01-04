@@ -30,22 +30,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function __construct(array $source = null, $readonly = null, $errProp = null)
     {
-        if ($source) {
-            if ($this->source) {
-                if ($this->fixed) {
-                    $diff = array_diff_key($source, $this->source);
-                    if (!empty($diff)) {
-                        reset($diff);
-                        throw new FieldNotExist(key($diff), $this);
-                    }
-                }
-                $this->source = array_replace($this->source, $source);
-            } else {
-                $this->source = $source;
-            }
-        } elseif ($this->source === null) {
-            $this->source = [];
-        }
+        $this->loadCustomSource($source);
         if (is_bool($readonly)) {
             $this->readonly = $readonly;
         }
@@ -263,6 +248,31 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
             throw new FieldNotExist($key, $this);
         }
         unset($this->source[$key]);
+    }
+
+    /**
+     * @param array $source
+     */
+    private function loadCustomSource($source)
+    {
+        if (!$source) {
+            if ($this->source === null) {
+                $this->source = [];
+            }
+            return;
+        }
+        if ($this->source === null) {
+            $this->source = $source;
+            return;
+        }
+        if ($this->fixed) {
+            $diff = array_diff_key($source, $this->source);
+            if (!empty($diff)) {
+                reset($diff);
+                throw new FieldNotExist(key($diff), $this);
+            }
+        }
+        $this->source = array_replace($this->source, $source);
     }
 
     /**
