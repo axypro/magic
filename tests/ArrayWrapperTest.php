@@ -10,13 +10,13 @@ use axy\magic\tests\nstst\Wrap;
 use axy\magic\tests\nstst\WrapRigidly;
 
 /**
- * @coversDefaultClass axy\magic\ArrayWrapper
+ * coversDefaultClass axy\magic\ArrayWrapper
  */
 class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::getSource
-     * @covers ::__construct
+     * covers ::getSource
+     * covers ::__construct
      */
     public function testGetSource()
     {
@@ -27,10 +27,10 @@ class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::__get()
-     * @covers ::__isset()
-     * @covers ::__set()
-     * @covers ::__unset()
+     * covers ::__get()
+     * covers ::__isset()
+     * covers ::__set()
+     * covers ::__unset()
      */
     public function testMagic()
     {
@@ -52,10 +52,10 @@ class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::offsetExists()
-     * @covers ::offsetGet()
-     * @covers ::offsetSet()
-     * @covers ::offsetUnset()
+     * covers ::offsetExists()
+     * covers ::offsetGet()
+     * covers ::offsetSet()
+     * covers ::offsetUnset()
      */
     public function testArrayAccess()
     {
@@ -77,7 +77,7 @@ class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::count
+     * covers ::count
      */
     public function testCount()
     {
@@ -87,7 +87,7 @@ class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::getIterator
+     * covers ::getIterator
      */
     public function testTraversable()
     {
@@ -101,8 +101,8 @@ class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::convertIndex
-     * @covers ::convertKey
+     * covers ::convertIndex
+     * covers ::convertKey
      */
     public function testConvertIndexKey()
     {
@@ -135,9 +135,9 @@ class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::__construct
-     * @covers ::toReadOnly
-     * @covers ::isReadOnly
+     * covers ::__construct
+     * covers ::toReadOnly
+     * covers ::isReadOnly
      */
     public function testReadOnly()
     {

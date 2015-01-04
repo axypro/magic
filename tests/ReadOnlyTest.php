@@ -8,12 +8,12 @@ namespace axy\magic\tests;
 use axy\magic\tests\nstst\RO;
 
 /**
- * @coversDefaultClass axy\magic\ReadOnly
+ * coversDefaultClass axy\magic\ReadOnly
  */
 class ReadOnlyTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__set
+     * covers ::__set
      * @expectedException \axy\magic\errors\ContainerReadOnly
      * @expectedExceptionMessage CRO is read-only
      */
@@ -24,7 +24,7 @@ class ReadOnlyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::__unset
+     * covers ::__unset
      * @expectedException \axy\magic\errors\ContainerReadOnly
      * @expectedExceptionMessage CRO is read-only
      */
@@ -35,7 +35,7 @@ class ReadOnlyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::__set
+     * covers ::__set
      */
     public function testRealSet()
     {

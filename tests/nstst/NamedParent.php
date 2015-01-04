@@ -5,9 +5,11 @@
 
 namespace axy\magic\tests\nstst;
 
+use \axy\magic\Named;
+
 class NamedParent
 {
-    use \axy\magic\Named;
+    use Named;
 
     public function getName()
     {

@@ -12,6 +12,6 @@ class AAMagicConvert extends AAMagic
      */
     protected function magicConvertIndexToKey($key)
     {
-        return \str_replace('-', '_', $key);
+        return str_replace('-', '_', $key);
     }
 }

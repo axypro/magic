@@ -5,12 +5,17 @@
 
 namespace axy\magic\tests\nstst\lazy;
 
+use \axy\magic\LazyField;
+use \axy\magic\ArrayMagic;
+use \axy\magic\Named;
+use \axy\magic\ReadOnly;
+
 class LF implements \ArrayAccess
 {
-    use \axy\magic\LazyField;
-    use \axy\magic\ArrayMagic;
-    use \axy\magic\Named;
-    use \axy\magic\ReadOnly;
+    use LazyField;
+    use ArrayMagic;
+    use Named;
+    use ReadOnly;
 
     protected $magicDefaults = [
         'fields' => [
@@ -75,16 +80,16 @@ class LF implements \ArrayAccess
     {
         self::$calls[] = 'load:'.$key;
         $filename = __DIR__.'/'.$key.'.txt';
-        if (!\is_file($filename)) {
+        if (!is_file($filename)) {
             return $this->magicErrorFieldNotExist($key);
         }
-        return \trim(\file_get_contents($filename));
+        return trim(file_get_contents($filename));
     }
 
     protected function magicExistsField($key)
     {
         self::$calls[] = 'isset:'.$key;
         $filename = __DIR__.'/'.$key.'.txt';
-        return \is_file($filename);
+        return is_file($filename);
     }
 }

@@ -1,19 +1,18 @@
 <?php
 /**
  * @package axy\magic
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\magic;
 
 /**
  * ArrayAccess-requests are forwarded to the magic methods
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 trait ArrayMagic
 {
     /**
-     * Convert an array index to a magic key
+     * Converts an array index to a magic key
      *
      * @param string $index
      * @return string

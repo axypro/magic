@@ -9,7 +9,7 @@ use axy\magic\tests\nstst\lazy\LF;
 use axy\magic\tests\nstst\lazy\LFChild;
 
 /**
- * @coversDefaultClass axy\magic\LazyField
+ * coversDefaultClass axy\magic\LazyField
  */
 class LazyFieldTest extends \PHPUnit_Framework_TestCase
 {

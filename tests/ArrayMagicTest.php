@@ -10,15 +10,15 @@ use axy\magic\tests\nstst\AAMagicConvert;
 use axy\magic\tests\nstst\AAMagicRO;
 
 /**
- * @coversDefaultClass axy\magic\ArrayMagic
+ * coversDefaultClass axy\magic\ArrayMagic
  */
 class ArrayMagicTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::offsetExists
-     * @covers ::offsetGet
-     * @covers ::offsetSet
-     * @covers ::offsetUnset
+     * covers ::offsetExists
+     * covers ::offsetGet
+     * covers ::offsetSet
+     * covers ::offsetUnset
      */
     public function testAA()
     {
@@ -33,7 +33,7 @@ class ArrayMagicTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::magicConvertIndexToKey
+     * covers ::magicConvertIndexToKey
      */
     public function testConvertKey()
     {

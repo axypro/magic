@@ -5,14 +5,16 @@
 
 namespace axy\magic\tests\nstst;
 
-class Wrap extends \axy\magic\ArrayWrapper
+use \axy\magic\ArrayWrapper;
+
+class Wrap extends ArrayWrapper
 {
     /**
      * {@inheritdoc}
      */
     protected function convertIndex($index)
     {
-        return \str_replace('-', ' ', $index);
+        return str_replace('-', ' ', $index);
     }
 
     /**
@@ -20,7 +22,7 @@ class Wrap extends \axy\magic\ArrayWrapper
      */
     protected function convertKey($key)
     {
-        return \str_replace('_', ' ', $key);
+        return str_replace('_', ' ', $key);
     }
 
     /**

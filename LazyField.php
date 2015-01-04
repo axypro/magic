@@ -1,6 +1,7 @@
 <?php
 /**
  * @package axy\magic
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\magic;
@@ -10,8 +11,6 @@ use axy\callbacks\Callback;
 
 /**
  * The container with lazy fields
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 trait LazyField
 {
@@ -45,10 +44,10 @@ trait LazyField
             $this->magicInit();
         }
         $fields = &$this->magicFields['fields'];
-        if (!\array_key_exists($key, $fields)) {
+        if (!array_key_exists($key, $fields)) {
             if (isset($this->magicFields['loaders'][$key])) {
                 $loader = $this->magicFields['loaders'][$key];
-                if ((\is_string($loader)) && (\substr($loader, 0, 2) == '::')) {
+                if ((is_string($loader)) && (substr($loader, 0, 2) == '::')) {
                     $loader = \substr($loader, 2);
                     $fields[$key] = $this->$loader($key);
                 } else {
@@ -73,8 +72,8 @@ trait LazyField
             $this->magicInit();
         }
         $exists = &$this->magicFields['exists'];
-        if (!\array_key_exists($key, $exists)) {
-            if (\array_key_exists($key, $this->magicFields['fields'])) {
+        if (!array_key_exists($key, $exists)) {
+            if (array_key_exists($key, $this->magicFields['fields'])) {
                 $exists[$key] = true;
             } elseif (isset($this->magicFields['loaders'][$key])) {
                 $exists[$key] = true;
@@ -127,8 +126,8 @@ trait LazyField
      */
     protected function magicGetDefaults()
     {
-        if (\property_exists($this, 'magicDefaults')) {
-            if (\is_array($this->magicDefaults)) {
+        if (property_exists($this, 'magicDefaults')) {
+            if (is_array($this->magicDefaults)) {
                 return $this->magicDefaults;
             }
         }
@@ -141,7 +140,7 @@ trait LazyField
     protected function magicInit()
     {
         if (!$this->magicInited) {
-            $this->magicFields = \array_replace($this->magicFields, $this->magicGetDefaults());
+            $this->magicFields = array_replace($this->magicFields, $this->magicGetDefaults());
             $this->magicInited = true;
         }
     }

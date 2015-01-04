@@ -5,7 +5,9 @@
 
 namespace axy\magic\tests\nstst;
 
-class WrapRigidly extends \axy\magic\ArrayWrapper
+use \axy\magic\ArrayWrapper;
+
+class WrapRigidly extends ArrayWrapper
 {
     /**
      * {@inheritdoc}

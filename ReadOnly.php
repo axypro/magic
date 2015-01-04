@@ -1,6 +1,7 @@
 <?php
 /**
  * @package axy\magic
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\magic;
@@ -9,8 +10,6 @@ use axy\magic\errors\ContainerReadOnly;
 
 /**
  * The read-only container
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 trait ReadOnly
 {

@@ -10,12 +10,12 @@ use axy\magic\tests\nstst\NamedChild;
 use axy\magic\tests\nstst\NamedChildOver;
 
 /**
- * @coversDefaultClass axy\magic\Named
+ * coversDefaultClass axy\magic\Named
  */
 class NamedTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::magicGetName
+     * covers ::magicGetName
      */
     public function testDefault()
     {
@@ -25,7 +25,7 @@ class NamedTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::magicGetName
+     * covers ::magicGetName
      */
     public function testProperty()
     {
@@ -35,7 +35,7 @@ class NamedTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::magicGetName
+     * covers ::magicGetName
      */
     public function testMethod()
     {

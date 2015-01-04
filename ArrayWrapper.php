@@ -1,6 +1,7 @@
 <?php
 /**
  * @package axy\magic
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\magic;
@@ -10,53 +11,51 @@ use axy\magic\errors\FieldNotExist;
 
 /**
  * The wrapper for an array
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
 {
     use Named;
 
     /**
-     * Constructor
+     * The constructor
      *
      * @param array $source [optional]
      *        the source array (by default - empty)
      * @param boolean $readonly [optional]
      *        the readonly flag (by default - as defined in this class)
-     * @param boolean $errprop [optional]
+     * @param boolean $errProp [optional]
      *        the error NotFound flag (by default - as defined in this class)
      * @throws \axy\magic\errors\FieldNotExist
      *         the source contains an unknown field (for a rigid structure)
      */
-    public function __construct(array $source = null, $readonly = null, $errprop = null)
+    public function __construct(array $source = null, $readonly = null, $errProp = null)
     {
         if ($source) {
             if ($this->source) {
                 if ($this->rigidly) {
-                    $diff = \array_diff_key($source, $this->source);
+                    $diff = array_diff_key($source, $this->source);
                     if (!empty($diff)) {
-                        \reset($diff);
-                        throw new FieldNotExist(\key($diff), $this);
+                        reset($diff);
+                        throw new FieldNotExist(key($diff), $this);
                     }
                 }
-                $this->source = \array_replace($this->source, $source);
+                $this->source = array_replace($this->source, $source);
             } else {
                 $this->source = $source;
             }
         } elseif ($this->source === null) {
             $this->source = [];
         }
-        if (\is_bool($readonly)) {
+        if (is_bool($readonly)) {
             $this->readonly = $readonly;
         }
-        if (\is_bool($errprop)) {
-            $this->errprop = $errprop;
+        if (is_bool($errProp)) {
+            $this->errProp = $errProp;
         }
     }
 
     /**
-     * Get the source array
+     * Returns the source array
      *
      * @return array
      */
@@ -66,7 +65,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     }
 
     /**
-     * Switch the object in read-only mode
+     * Switches the object to read-only mode
      */
     public function toReadonly()
     {
@@ -74,7 +73,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     }
 
     /**
-     * Checks if the object in read-only mode
+     * Checks if the object is read-only
      *
      * @return boolean
      */
@@ -204,8 +203,8 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     protected function get($key)
     {
-        if (!\array_key_exists($key, $this->source)) {
-            if ($this->errprop) {
+        if (!array_key_exists($key, $this->source)) {
+            if ($this->errProp) {
                 throw new FieldNotExist($key, $this);
             }
             return null;
@@ -214,18 +213,18 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     }
 
     /**
-     * Check if an item is exists
+     * Checks if an item is exists
      *
      * @param string $key
      * @return boolean
      */
     protected function exists($key)
     {
-        return \array_key_exists($key, $this->source);
+        return array_key_exists($key, $this->source);
     }
 
     /**
-     * Set an item value
+     * Sets an item value
      *
      * @param string $key
      * @param mixed $value
@@ -237,7 +236,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
         if ($this->readonly) {
             throw new ContainerReadOnly($this);
         }
-        if ($this->rigidly && (!\array_key_exists($key, $this->source))) {
+        if ($this->rigidly && (!array_key_exists($key, $this->source))) {
             throw new FieldNotExist($key, $this);
         }
         $this->source[$key] = $value;
@@ -255,8 +254,8 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
         if ($this->readonly) {
             throw new ContainerReadOnly($this);
         }
-        if ($this->errprop) {
-            if (!\array_key_exists($key, $this->source)) {
+        if ($this->errProp) {
+            if (!array_key_exists($key, $this->source)) {
                 throw new FieldNotExist($key, $this);
             }
         }
@@ -281,14 +280,14 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     protected $readonly = false;
 
     /**
-     * Throw exception if property not found (by default - returns NULL)
+     * Flag to throw an exception if a property is not found (by default - returns NULL)
      *
      * @var boolean
      */
-    protected $errprop = false;
+    protected $errProp = false;
 
     /**
-     * Rigid structure
+     * The flag of rigid structure
      *
      * @var boolean
      */

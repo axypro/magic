@@ -1,6 +1,7 @@
 <?php
 /**
  * @package axy\magic
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\magic;
@@ -9,9 +10,7 @@ namespace axy\magic;
  * The named container
  *
  * By default, the name of container equals of it class name.
- * You can override a static variable "magicName" or method getMagicName().
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
+ * You can override a static variable "magicName" or method magicGetName().
  */
 trait Named
 {
@@ -22,10 +21,10 @@ trait Named
      */
     protected function magicGetName()
     {
-        if ((\property_exists($this, 'magicName')) && (!empty($this->magicName))) {
+        if ((property_exists($this, 'magicName')) && (!empty($this->magicName))) {
             return $this->magicName;
         }
-        return \get_class($this);
+        return get_class($this);
     }
 
     /**

@@ -5,7 +5,9 @@
 
 namespace axy\magic\tests\nstst;
 
+use \axy\magic\ReadOnly;
+
 class AAMagicRO extends AAMagic
 {
-    use \axy\magic\ReadOnly;
+    use ReadOnly;
 }
