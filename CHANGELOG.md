@@ -1,5 +1,8 @@
 ### dev-master
 
+* ArrayWrapper: flag `rigidly` rename to `fixed`
+* Refactoring and fixes
+
 ### 0.1.4 (24.01.2014)
 
 * Composer: PSR-4

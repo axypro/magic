@@ -7,12 +7,12 @@ namespace axy\magic\tests\nstst;
 
 use axy\magic\ArrayWrapper;
 
-class WrapRigidly extends ArrayWrapper
+class WrapFixed extends ArrayWrapper
 {
     /**
      * {@inheritdoc}
      */
-    protected $rigidly = true;
+    protected $fixed = true;
 
     /**
      * {@inheritdoc}

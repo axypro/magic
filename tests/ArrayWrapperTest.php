@@ -7,7 +7,7 @@ namespace axy\magic\tests;
 
 use axy\magic\ArrayWrapper;
 use axy\magic\tests\nstst\Wrap;
-use axy\magic\tests\nstst\WrapRigidly;
+use axy\magic\tests\nstst\WrapFixed;
 
 /**
  * coversDefaultClass axy\magic\ArrayWrapper
@@ -160,9 +160,9 @@ class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
         return $wrapper->unk;
     }
 
-    public function testRigidlySet()
+    public function testFixedSet()
     {
-        $wrapper = new WrapRigidly(['one' => 'One']);
+        $wrapper = new WrapFixed(['one' => 'One']);
         $wrapper->one = 1;
         $wrapper->two = 2;
         $this->setExpectedException('axy\magic\errors\FieldNotExist');
@@ -173,8 +173,8 @@ class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
      * @expectedException \axy\magic\errors\FieldNotExist
      * @expectedExceptionMessage Field "three" is not exist in "Wrap"
      */
-    public function testRigidlyConstruct()
+    public function testFixedConstruct()
     {
-        return new WrapRigidly(['one' => 'One', 'three' => 3]);
+        return new WrapFixed(['one' => 'One', 'three' => 3]);
     }
 }

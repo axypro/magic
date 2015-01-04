@@ -9,8 +9,8 @@ namespace axy\magic;
 /**
  * The named container
  *
- * By default, the name of container equals of it class name.
- * You can override a static variable "magicName" or method magicGetName().
+ * By default, the name of container equals to its class name.
+ * You can override the static variable "magicName" or method magicGetName().
  */
 trait Named
 {
@@ -21,7 +21,7 @@ trait Named
      */
     protected function magicGetName()
     {
-        if ((property_exists($this, 'magicName')) && (!empty($this->magicName))) {
+        if (property_exists($this, 'magicName') && (!empty($this->magicName))) {
             return $this->magicName;
         }
         return get_class($this);

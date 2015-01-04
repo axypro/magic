@@ -26,13 +26,13 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
      * @param boolean $errProp [optional]
      *        the error NotFound flag (by default - as defined in this class)
      * @throws \axy\magic\errors\FieldNotExist
-     *         the source contains an unknown field (for a rigid structure)
+     *         the source contains an unknown field (for fixed structure)
      */
     public function __construct(array $source = null, $readonly = null, $errProp = null)
     {
         if ($source) {
             if ($this->source) {
-                if ($this->rigidly) {
+                if ($this->fixed) {
                     $diff = array_diff_key($source, $this->source);
                     if (!empty($diff)) {
                         reset($diff);
@@ -236,7 +236,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
         if ($this->readonly) {
             throw new ContainerReadOnly($this);
         }
-        if ($this->rigidly && (!array_key_exists($key, $this->source))) {
+        if ($this->fixed && (!array_key_exists($key, $this->source))) {
             throw new FieldNotExist($key, $this);
         }
         $this->source[$key] = $value;
@@ -259,7 +259,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
                 throw new FieldNotExist($key, $this);
             }
         }
-        if ($this->rigidly) {
+        if ($this->fixed) {
             throw new FieldNotExist($key, $this);
         }
         unset($this->source[$key]);
@@ -287,9 +287,9 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
     protected $errProp = false;
 
     /**
-     * The flag of rigid structure
+     * The flag of fixed structure
      *
      * @var boolean
      */
-    protected $rigidly = false;
+    protected $fixed = false;
 }
