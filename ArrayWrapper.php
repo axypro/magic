@@ -143,7 +143,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function offsetSet($offset, $value)
     {
-        return $this->set($this->convertIndex($offset), $value);
+        $this->set($this->convertIndex($offset), $value);
     }
 
     /**
@@ -153,7 +153,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function offsetUnset($offset)
     {
-        return $this->remove($this->convertIndex($offset));
+        $this->remove($this->convertIndex($offset));
     }
 
     /**

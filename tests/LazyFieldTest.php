@@ -121,7 +121,7 @@ class LazyFieldTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException axy\magic\errors\ContainerReadOnly
+     * @expectedException \axy\magic\errors\ContainerReadOnly
      */
     public function testReadOnly()
     {
