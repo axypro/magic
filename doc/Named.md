@@ -4,7 +4,7 @@ With the help of `axy\magic\Named` can be set object name.
 The name is used primarily for debug.
 For example, is displayed in the message of the exception.
 
-You should either define a variable $ magichName:
+You should either define a variable `$magicName`:
 
 ```php
 class MyClass

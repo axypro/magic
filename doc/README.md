@@ -13,4 +13,4 @@ And they can be combined with each other.
 * [ArrayWrapper](ArrayWrapper.md) - wrapper over an array
 * [List of errors](errors.md) 
 
-Most of the properties and methods defined by these Traits have the prefix `magic`.
+The properties and methods defined by these Traits have the prefix `magic`.
