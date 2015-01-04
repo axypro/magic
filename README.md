@@ -1,16 +1,10 @@
-# axy\magic: work with magic fields
+# axy\magic: access to magic fields
 
-### Documentation
+* GitHub: [axypro/magic](https://github.com/axypro/magic)
+* Composer: [axypro/magic](https://packagist.org/packages/axy/magic)
 
-[Documentation in Russian](https://github.com/axypro/magic/wiki/ru)
+[Documentation](https://github.com/axypro/magic/blob/master/doc/README.md).
 
-### Install
+PHP 5.4+
 
-`composer require axy/magic:~0.1.1`
-
-### Dependencies
-
-Uses PHP 5.4+
-
-Requires [axy\errors](https://github.com/axypro/errors).
-Requires [axy\callbacks](https://github.com/axypro/callbacks).
+Library does not require any dependencies (except composer packages).

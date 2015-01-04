@@ -1,12 +1,12 @@
 <?php
 /**
- * Work with magic fields
+ * Access to magic fields
  *
  * @package axy\magic
  * @author Oleg Grigoriev <go.vasac@gmail.com>
  * @license https://raw.github.com/axypro/magic/master/LICENSE MIT
  * @link https://github.com/axypro/magic repository
- * @link https://github.com/axypro/magic/wiki documentation
+ * @link https://github.com/axypro/magic/blob/master/doc/README.md documentation
  * @link https://packagist.org/packages/axy/magic on packagist.org
  * @uses PHP5.4+
  */
