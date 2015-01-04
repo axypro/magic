@@ -1,22 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "aa4a80a8ea6e51bcfdf246c67538b935",
+    "hash": "c2fa92c6ead419c99f9383678d0807c2",
     "packages": [
         {
             "name": "axy/backtrace",
-            "version": "0.0.2",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/axypro/backtrace.git",
-                "reference": "514731778a3ea793c4e0aeb9f9710b32b4c558a6"
+                "reference": "53fb30513877cdde2853430026aeff3feda1cef4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/axypro/backtrace/zipball/514731778a3ea793c4e0aeb9f9710b32b4c558a6",
-                "reference": "514731778a3ea793c4e0aeb9f9710b32b4c558a6",
+                "url": "https://api.github.com/repos/axypro/backtrace/zipball/53fb30513877cdde2853430026aeff3feda1cef4",
+                "reference": "53fb30513877cdde2853430026aeff3feda1cef4",
                 "shasum": ""
             },
             "require": {
@@ -46,24 +47,24 @@
                 "exception",
                 "trace"
             ],
-            "time": "2014-01-24 08:29:56"
+            "time": "2014-12-22 16:19:47"
         },
         {
             "name": "axy/callbacks",
-            "version": "0.0.2",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/axypro/callbacks.git",
-                "reference": "06dc46496ef2c19475745283c48cc6e515c8b804"
+                "reference": "8405c279fd1a76a916fabd3b168f6d223f065c7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/axypro/callbacks/zipball/06dc46496ef2c19475745283c48cc6e515c8b804",
-                "reference": "06dc46496ef2c19475745283c48cc6e515c8b804",
+                "url": "https://api.github.com/repos/axypro/callbacks/zipball/8405c279fd1a76a916fabd3b168f6d223f065c7f",
+                "reference": "8405c279fd1a76a916fabd3b168f6d223f065c7f",
                 "shasum": ""
             },
             "require": {
-                "axy/errors": "~0.0.4",
+                "axy/errors": "~1.0.0",
                 "php": ">=5.4.0"
             },
             "type": "library",
@@ -85,26 +86,27 @@
             "description": "Extension of php-callback format",
             "homepage": "https://github.com/axypro/callbacks",
             "keywords": [
+                "call_user_func",
                 "callback"
             ],
-            "time": "2014-01-24 10:51:05"
+            "time": "2015-01-04 09:33:22"
         },
         {
             "name": "axy/errors",
-            "version": "0.0.4",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/axypro/errors.git",
-                "reference": "2667a582b1667088b302650b6f2f122979b6138c"
+                "reference": "b8864236af8b75709a35f1ceabeaacf3f4dcfda6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/axypro/errors/zipball/2667a582b1667088b302650b6f2f122979b6138c",
-                "reference": "2667a582b1667088b302650b6f2f122979b6138c",
+                "url": "https://api.github.com/repos/axypro/errors/zipball/b8864236af8b75709a35f1ceabeaacf3f4dcfda6",
+                "reference": "b8864236af8b75709a35f1ceabeaacf3f4dcfda6",
                 "shasum": ""
             },
             "require": {
-                "axy/backtrace": "~0.0.2",
+                "axy/backtrace": "~1.0.0",
                 "php": ">=5.4.0"
             },
             "type": "library",
@@ -129,23 +131,17 @@
                 "error",
                 "exception"
             ],
-            "time": "2014-01-24 10:28:45"
+            "time": "2015-01-02 19:30:28"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.4.0"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }
