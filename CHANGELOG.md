@@ -1,5 +1,6 @@
-### dev-master
+### 1.0.0 (05.01.2014)
 
+* Documentation in English
 * ArrayWrapper: flag `rigidly` rename to `fixed`
 * Refactoring and fixes
 

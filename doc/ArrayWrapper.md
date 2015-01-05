@@ -53,7 +53,7 @@ In this case, an array from constructor will merge with the initial value.
 class MyWrapper extends ArrayWrapper
 {
     protected $source = [
-        'one' => 'First,
+        'one' => 'First',
         'two' => 'Second',
     ];
 }
@@ -145,7 +145,7 @@ $options1 = new Options(['display_errors' => true]);
 $options2 = new Options(['custom_option' => 10]); // throw FieldNotExists
 ```
 
-If the protected property `$fixed` set to `TRUE` the the array structure is considered fixed.
+If the protected property `$fixed` set to `TRUE` the array structure is considered fixed.
 The initial value of `$source` defines this structure and default values for fields.
 
 You cannot add new fields by the magic methods or by the constructor.
