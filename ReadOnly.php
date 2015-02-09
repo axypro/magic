@@ -10,6 +10,8 @@ use axy\magic\errors\ContainerReadOnly;
 
 /**
  * The read-only container
+ *
+ * @link https://github.com/axypro/magic/blob/master/doc/ReadOnly.md documentation
  */
 trait ReadOnly
 {

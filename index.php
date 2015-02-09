@@ -7,7 +7,7 @@
  * @license https://raw.github.com/axypro/magic/master/LICENSE MIT
  * @link https://github.com/axypro/magic repository
  * @link https://github.com/axypro/magic/blob/master/doc/README.md documentation
- * @link https://packagist.org/packages/axy/magic on packagist.org
+ * @link https://packagist.org/packages/axy/magic composer
  * @uses PHP5.4+
  */
 

@@ -11,6 +11,8 @@ namespace axy\magic;
  *
  * By default, the name of container equals to its class name.
  * You can override the static variable "magicName" or method magicGetName().
+ *
+ * @link https://github.com/axypro/magic/blob/master/doc/Named.md documentation
  */
 trait Named
 {

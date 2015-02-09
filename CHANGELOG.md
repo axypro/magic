@@ -1,3 +1,8 @@
+# 1.0.1 (09.02.2015)
+
+* @links to the documentation
+* Refactor composer.json
+
 ### 1.0.0 (05.01.2014)
 
 * Documentation in English

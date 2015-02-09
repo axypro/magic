@@ -8,6 +8,8 @@ namespace axy\magic;
 
 /**
  * ArrayAccess-requests are forwarded to the magic methods
+ *
+ * @link https://github.com/axypro/magic/blob/master/doc/ArrayMagic.md documentation
  */
 trait ArrayMagic
 {

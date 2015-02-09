@@ -11,6 +11,8 @@ use axy\callbacks\Callback;
 
 /**
  * The container with lazy fields
+ *
+ * @link https://github.com/axypro/magic/blob/master/doc/LazyField.md documentation
  */
 trait LazyField
 {
