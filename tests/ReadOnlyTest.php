@@ -5,7 +5,7 @@
 
 namespace axy\magic\tests;
 
-use axy\magic\tests\nstst\RO;
+use axy\magic\tests\tst\RO;
 
 /**
  * coversDefaultClass axy\magic\ReadOnly

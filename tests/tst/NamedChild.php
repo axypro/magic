@@ -3,7 +3,7 @@
  * @package axy\magic
  */
 
-namespace axy\magic\tests\nstst;
+namespace axy\magic\tests\tst;
 
 class NamedChild extends NamedParent
 {

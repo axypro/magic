@@ -5,9 +5,9 @@
 
 namespace axy\magic\tests;
 
-use axy\magic\tests\nstst\AAMagic;
-use axy\magic\tests\nstst\AAMagicConvert;
-use axy\magic\tests\nstst\AAMagicRO;
+use axy\magic\tests\tst\AAMagic;
+use axy\magic\tests\tst\AAMagicConvert;
+use axy\magic\tests\tst\AAMagicRO;
 
 /**
  * coversDefaultClass axy\magic\ArrayMagic

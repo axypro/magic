@@ -3,7 +3,7 @@
  * @package axy\magic
  */
 
-namespace axy\magic\tests\nstst;
+namespace axy\magic\tests\tst;
 
 class AAMagicConvert extends AAMagic
 {

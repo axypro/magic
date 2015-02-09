@@ -6,8 +6,8 @@
 namespace axy\magic\tests;
 
 use axy\magic\ArrayWrapper;
-use axy\magic\tests\nstst\Wrap;
-use axy\magic\tests\nstst\WrapFixed;
+use axy\magic\tests\tst\Wrap;
+use axy\magic\tests\tst\WrapFixed;
 
 /**
  * coversDefaultClass axy\magic\ArrayWrapper
@@ -31,6 +31,7 @@ class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
      * covers ::__isset()
      * covers ::__set()
      * covers ::__unset()
+     * @noinspection
      */
     public function testMagic()
     {

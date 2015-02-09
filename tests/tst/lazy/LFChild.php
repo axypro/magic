@@ -3,7 +3,7 @@
  * @package axy\magic
  */
 
-namespace axy\magic\tests\nstst\lazy;
+namespace axy\magic\tests\tst\lazy;
 
 class LFChild extends LF
 {

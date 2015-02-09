@@ -129,7 +129,9 @@ trait LazyField
     protected function magicGetDefaults()
     {
         if (property_exists($this, 'magicDefaults')) {
+            /** @noinspection PhpUndefinedFieldInspection */
             if (is_array($this->magicDefaults)) {
+                /** @noinspection PhpUndefinedFieldInspection */
                 return $this->magicDefaults;
             }
         }

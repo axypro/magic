@@ -5,8 +5,8 @@
 
 namespace axy\magic\tests;
 
-use axy\magic\tests\nstst\lazy\LF;
-use axy\magic\tests\nstst\lazy\LFChild;
+use axy\magic\tests\tst\lazy\LF;
+use axy\magic\tests\tst\lazy\LFChild;
 
 /**
  * coversDefaultClass axy\magic\LazyField

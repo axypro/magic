@@ -5,9 +5,9 @@
 
 namespace axy\magic\tests;
 
-use axy\magic\tests\nstst\NamedParent;
-use axy\magic\tests\nstst\NamedChild;
-use axy\magic\tests\nstst\NamedChildOver;
+use axy\magic\tests\tst\NamedParent;
+use axy\magic\tests\tst\NamedChild;
+use axy\magic\tests\tst\NamedChildOver;
 
 /**
  * coversDefaultClass axy\magic\Named
@@ -20,8 +20,8 @@ class NamedTest extends \PHPUnit_Framework_TestCase
     public function testDefault()
     {
         $instance = new NamedParent();
-        $this->assertSame('axy\magic\tests\nstst\NamedParent', $instance->getName());
-        $this->assertSame('axy\magic\tests\nstst\NamedParent', (string)$instance);
+        $this->assertSame('axy\magic\tests\tst\NamedParent', $instance->getName());
+        $this->assertSame('axy\magic\tests\tst\NamedParent', (string)$instance);
     }
 
     /**

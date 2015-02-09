@@ -93,7 +93,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function __set($key, $value)
     {
-        return $this->set($this->convertKey($key), $value);
+        $this->set($this->convertKey($key), $value);
     }
 
     /**
@@ -103,7 +103,7 @@ class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function __unset($key)
     {
-        return $this->remove($this->convertKey($key));
+        $this->remove($this->convertKey($key));
     }
 
     /**

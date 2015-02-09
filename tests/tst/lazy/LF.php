@@ -3,13 +3,20 @@
  * @package axy\magic
  */
 
-namespace axy\magic\tests\nstst\lazy;
+namespace axy\magic\tests\tst\lazy;
 
 use axy\magic\LazyField;
 use axy\magic\ArrayMagic;
 use axy\magic\Named;
 use axy\magic\ReadOnly;
 
+/**
+ * @property-read mixed $static_f
+ * @property-read mixed $one
+ * @property-read mixed $first
+ * @property-read mixed $two
+ * @property-read mixed $click
+ */
 class LF implements \ArrayAccess
 {
     use LazyField;
@@ -62,7 +69,12 @@ class LF implements \ArrayAccess
         return func_get_args();
     }
 
-    private function createTwo($key)
+    /**
+     * @param string $key
+     * @return string
+     * @SuppressWarnings(PHPMD.UnusedPrivateMethod) this method called from a callback
+     */
+    protected function createTwo($key)
     {
         self::$calls[] = 'createTwo:'.$key;
         return 'k'.$key;
