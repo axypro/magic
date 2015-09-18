@@ -12,7 +12,7 @@ use axy\magic\ReadOnly;
 
 /**
  * @property-read mixed $static_f
- * @property-read mixed $one
+ * @property mixed $one
  * @property-read mixed $first
  * @property-read mixed $two
  * @property-read mixed $click
