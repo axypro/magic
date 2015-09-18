@@ -19,6 +19,7 @@ And they can be combined with each other.
 * [ArrayMagic](doc/ArrayMagic.md) - access to fields as array elements
 * [Named](doc/Named.md) - named objects
 * [LazyField](doc/LazyField.md) - lazy fields
+* [LazyContainer](doc/LazyContainer.md) - container with fixed set of lazy properties
 * [ArrayWrapper](doc/ArrayWrapper.md) - wrapper over an array
 * [List of errors](doc/errors.md) 
 

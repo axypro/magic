@@ -1,3 +1,7 @@
+# 1.0.2 (18.09.2015)
+
+* LazyContainer
+
 # 1.0.1 (09.02.2015)
 
 * @links to the documentation

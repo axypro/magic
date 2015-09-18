@@ -10,6 +10,8 @@ use axy\magic\errors\FieldNotExist;
 
 /**
  * Container with fixed set of lazy properties
+ *
+ * @link https://github.com/axypro/magic/blob/master/doc/LazyContainer.md documentation
  */
 class LazyContainer implements \ArrayAccess
 {

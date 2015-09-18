@@ -10,6 +10,7 @@ And they can be combined with each other.
 * [ArrayMagic](ArrayMagic.md) - access to fields as array elements
 * [Named](Named.md) - named objects
 * [LazyField](LazyField.md) - lazy fields
+* [LazyContainer](LazyContainer.md) - container with fixed set of lazy properties
 * [ArrayWrapper](ArrayWrapper.md) - wrapper over an array
 * [List of errors](errors.md) 
 
