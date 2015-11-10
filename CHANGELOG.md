@@ -1,8 +1,13 @@
-# 1.0.2 (18.09.2015)
+### 1.0.3 (10.11.2015)
+
+* Exclude tests, docs ant etc for GitHub zip and Composer package dist.
+* A little refactoring and code style
+
+### 1.0.2 (18.09.2015)
 
 * LazyContainer
 
-# 1.0.1 (09.02.2015)
+### 1.0.1 (09.02.2015)
 
 * @links to the documentation
 * Inspect code and refactoring
