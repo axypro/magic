@@ -10,6 +10,7 @@ use axy\magic\tests\tst\lazy\LFChild;
 
 /**
  * coversDefaultClass axy\magic\LazyField
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
 class LazyFieldTest extends \PHPUnit_Framework_TestCase
 {

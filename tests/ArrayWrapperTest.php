@@ -11,6 +11,7 @@ use axy\magic\tests\tst\WrapFixed;
 
 /**
  * coversDefaultClass axy\magic\ArrayWrapper
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
 class ArrayWrapperTest extends \PHPUnit_Framework_TestCase
 {

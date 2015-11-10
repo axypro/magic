@@ -13,6 +13,7 @@ use axy\magic\errors\FieldNotExist;
  * The wrapper for an array
  *
  * @link https://github.com/axypro/magic/blob/master/doc/ArrayWrapper.md documentation
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
 class ArrayWrapper implements \ArrayAccess, \Countable, \IteratorAggregate
 {
