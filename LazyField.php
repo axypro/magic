@@ -104,7 +104,7 @@ trait LazyField
      * @param string $key
      * @return boolean
      */
-    protected function magicExistsField($key)
+    protected function magicExistsField(/** @noinspection PhpUnusedParameterInspection */ $key)
     {
         return false;
     }

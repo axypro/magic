@@ -102,7 +102,7 @@ if (!isset($instaince->x)) {
 
 It should consider the following:
 
-* `magicInit()`. When requesting initialization properties automatically. But here require call it manualy.
+* `magicInit()`. When requesting initialization properties automatically. But here require call it manually.
 * And do not forget about the cache of `exists`.
 
 ## `$magicDefaults`: preset properties
@@ -258,7 +258,7 @@ if (isset($instance->rnd)) {
 
 This method is called when the key is not found.
 By default the exception `axy\magic\errors\FieldNotExists` will be thrown.
-It can be overriden by one of the following ways:
+It can be overridden by one of the following ways:
 
 * Throw your custom exception (recommended inherit it from `FieldNotExists`).
 * Return default value (`NULL` for example).

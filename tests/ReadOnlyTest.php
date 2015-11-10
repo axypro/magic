@@ -20,6 +20,7 @@ class ReadOnlyTest extends \PHPUnit_Framework_TestCase
     public function testSet()
     {
         $instance = new RO();
+        /** @noinspection PhpUndefinedFieldInspection */
         $instance->x = 10;
     }
 
@@ -47,6 +48,7 @@ class ReadOnlyTest extends \PHPUnit_Framework_TestCase
     public function testMagicGet()
     {
         $instance = new RO();
+        /** @noinspection PhpUndefinedFieldInspection */
         $this->assertSame('k_var', $instance->var);
     }
 }

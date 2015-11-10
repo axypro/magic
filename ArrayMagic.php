@@ -29,6 +29,7 @@ trait ArrayMagic
      */
     public function offsetExists($offset)
     {
+        /** @noinspection PhpUndefinedMethodInspection */
         return $this->__isset($this->magicConvertIndexToKey($offset));
     }
 
@@ -37,6 +38,7 @@ trait ArrayMagic
      */
     public function offsetGet($offset)
     {
+        /** @noinspection PhpUndefinedMethodInspection */
         return $this->__get($this->magicConvertIndexToKey($offset));
     }
 
@@ -45,6 +47,7 @@ trait ArrayMagic
      */
     public function offsetSet($offset, $value)
     {
+        /** @noinspection PhpUndefinedMethodInspection */
         return $this->__set($this->magicConvertIndexToKey($offset), $value);
     }
 
@@ -53,6 +56,7 @@ trait ArrayMagic
      */
     public function offsetUnset($offset)
     {
+        /** @noinspection PhpUndefinedMethodInspection */
         return $this->__unset($this->magicConvertIndexToKey($offset));
     }
 }

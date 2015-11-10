@@ -54,8 +54,10 @@ class LazyFieldTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(isset($lazy->first));
         $this->assertTrue(isset($lazy->second));
         $this->assertSame('Content of first.txt', $lazy->first);
+        /** @noinspection PhpUndefinedFieldInspection */
         $this->assertSame('Content of second.txt', $lazy->second);
         $this->assertSame('Content of first.txt', $lazy->first);
+        /** @noinspection PhpUndefinedFieldInspection */
         $this->assertSame('Content of second.txt', $lazy->second);
         $this->assertEquals(['isset:second', 'load:first', 'load:second'], LF::$calls);
     }
@@ -71,6 +73,7 @@ class LazyFieldTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(['isset:unk'], LF::$calls);
         $msg = 'Field "unk" is not exist in "TestLF"';
         $this->setExpectedException('axy\magic\errors\FieldNotExist', $msg);
+        /** @noinspection PhpUndefinedFieldInspection */
         return $lazy->unk;
     }
 
@@ -86,6 +89,7 @@ class LazyFieldTest extends \PHPUnit_Framework_TestCase
         $lazy = new LFChild();
         $this->assertTrue(isset($lazy->child));
         $this->assertTrue(isset($lazy->click));
+        /** @noinspection PhpUndefinedFieldInspection */
         $this->assertSame('value child', $lazy->child);
         $this->assertSame(1, $lazy->click);
     }
@@ -96,6 +100,7 @@ class LazyFieldTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(isset($lazy->static_f));
         $this->assertTrue(isset($lazy->new_static));
         $this->assertSame('value of static', $lazy->static_f);
+        /** @noinspection PhpUndefinedFieldInspection */
         $this->assertSame('nsv', $lazy->new_static);
     }
 
@@ -107,6 +112,7 @@ class LazyFieldTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(isset($lazy->three));
         $this->assertEquals([1, 2, 'one'], $lazy->one);
         $this->assertSame(null, $lazy->two);
+        /** @noinspection PhpUndefinedFieldInspection */
         $this->assertSame('v three', $lazy->three);
     }
 
@@ -117,7 +123,9 @@ class LazyFieldTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(isset($lazy->qwe));
         $this->assertFalse(isset($lazy->unk));
         $this->assertSame('Content of first.txt', $lazy->first);
+        /** @noinspection PhpUndefinedFieldInspection */
         $this->assertSame('rty', $lazy->qwe);
+        /** @noinspection PhpUndefinedFieldInspection */
         $this->assertSame(null, $lazy->unk);
     }
 
