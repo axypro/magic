@@ -1,3 +1,7 @@
+### dev-master
+
+* Travis
+
 ### 1.0.3 (10.11.2015)
 
 * Exclude tests, docs ant etc for GitHub zip and Composer package dist.
