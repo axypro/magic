@@ -1,6 +1,7 @@
 ### dev-master
 
-* Travis
+* Travis & Coveralls
+* Refactoring README
 
 ### 1.0.3 (10.11.2015)
 
