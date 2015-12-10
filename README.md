@@ -9,7 +9,7 @@ Access to magic fields (PHP).
 [![License](https://poser.pugx.org/axy/magic/license)](LICENSE)
 
 * The library does not require any dependencies (except composer packages).
-* Tested on PHP 5.4+, PHP 7, HHVM (on Linux).
+* Tested on PHP 5.4+, PHP 7, HHVM (on Linux), PHP 5.5 (on Windows).
 * Install: `composer require axy/magic`.
 * License: [MIT](LICENSE).
 
